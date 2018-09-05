@@ -27,7 +27,7 @@
 	<b>성별 :</b> <%=info.get("gender") %><br><br>
 	<b>최근 접속 시간 :</b><br><br>
 		<%=time==null? "-":sdf.format(time)%><br><br>
-		<a href="<%=application.getContextPath() %>/mypage/main.jsp""><button type="submit">돌 아 가 기</button></a>
+		<a href="<%=application.getContextPath() %>/mypage/main.jsp""><button type="submit">메 인 으 로</button></a>
 		<a href="<%=application.getContextPath() %>/log/logout.jsp""><button type="submit">로 그 아 웃</button></a>
 <font style="color: red;"></font>
 </p>

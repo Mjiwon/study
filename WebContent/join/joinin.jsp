@@ -26,7 +26,8 @@
 				<input type="radio" style="font-size: 16px; padding: 5px" name="gender" value="F"/><span style="font-size: 16px; padding: 5px">여성</span>
 		</div>
 	</div>
-				<button type="submit">회 원 가 입</button>	
+				<button type="submit">회 원 가 입</button>
+				<a href="<%=application.getContextPath() %>/log/login.jsp"><button type="submit">로  그  인</button></a>
 	</form>
 
 </body>

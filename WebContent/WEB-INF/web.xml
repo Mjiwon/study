@@ -9,4 +9,27 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+	<listener>
+		<listener-class>handler.ApplicationHandler</listener-class>
+	</listener>
+	<listener>
+		<listener-class>handler.SessionHandler</listener-class>
+	</listener>
+	
+	<filter>
+		<filter-name>a</filter-name>
+		<filter-class>filters.FirstFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>a</filter-name>
+		<url-pattern>/mypage/*</url-pattern>	
+		<url-pattern>/message/*</url-pattern>
+		<url-pattern>/log/logoutaction.jsp</url-pattern>
+		<url-pattern>/log/logout.jsp</url-pattern>
+		<url-pattern>/join/joinaction.jsp</url-pattern>
+		
+	</filter-mapping>
+	
 </web-app>

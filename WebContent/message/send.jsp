@@ -11,5 +11,6 @@
 		<textarea name="message" style="height:300px; width: 220px; padding: 5px; resize: none;"placeholder="메세지를 입력해주세요." ></textarea>
 	</p>
 	<button type="submit">전 송</button>
+	<a href="<%=application.getContextPath()%>/message/messagehome.jsp">취소</a>
 </form>
  
