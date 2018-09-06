@@ -14,5 +14,6 @@
 	</environments>
 	<mappers>
 			<mapper resource="mappers/mapper-exer02.xml"/>
+			<mapper resource="mappers/goodlog.xml"/>			
 	</mappers>
 </configuration>

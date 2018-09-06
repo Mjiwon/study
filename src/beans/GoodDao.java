@@ -1,9 +1,7 @@
 package beans;
 
-
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
@@ -11,54 +9,42 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-
-public class BoardDao {
-	
+public class GoodDao {
 	SqlSessionFactory factory;
 	
-	public BoardDao()  throws IOException{
+	public GoodDao()  throws IOException{
 		SqlSessionFactoryBuilder bd = new SqlSessionFactoryBuilder();
 		InputStream is = Resources.getResourceAsStream("mybatis-config.xml");
 		factory = bd.build(is);
 	}
 	
-	public int addPosts(Map param) {
+	public int addGoodLog(Map p) {
 		SqlSession sql = factory.openSession();
-		
 		try {
-			int r = sql.insert("exer02_board.addNewContent", param);
+			int r = sql.insert("good.addGoodLog",p);
 			if(r==1) {
 				sql.commit();
 			}
 			return r;
-		}catch(Exception e ) {
+		}catch(Exception e) {
 			e.printStackTrace();
 			return -1;
 		}
 	}
 	
-	public List<Map> getAllPostList(){
+	public boolean goodByNo(int a) {
 		SqlSession sql = factory.openSession();
-		
 		try {
-			List<Map> li = sql.selectList("exer02_board.getAllContent");
-			
-			return li;
-			
+			int r = sql.update("good.incGoodByNo",a);
+			if(r>0) {
+				sql.commit();
+				return true;
+			}else {
+				return false;
+			}
 		}catch(Exception e) {
 			e.printStackTrace();
-			return null;
+			return false;
 		}
 	}
-	
-	public Map getOneByNo(int no) {
-		SqlSession session = factory.openSession();
-		try {
-			return session.selectOne("exer02_board.getOneDataUsingMapbyNo",no);
-		}catch(Exception e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
-	
 }

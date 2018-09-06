@@ -51,13 +51,18 @@
 	}
 	
 	String wuri = (String)session.getAttribute("uri");
+	String query = (String)session.getAttribute("query");
+	
+	String go = wuri+(query!=null ? "?"+query:"");
+	
+	System.out.println(go);
 %>
 <p>
 <%
 	switch(str){
 	case "성공":
-
-		String red = wuri ==null ? application.getContextPath()+"/mypage/main.jsp" :application.getContextPath()+wuri;
+		
+		String red = wuri ==null ? application.getContextPath()+"/mypage/main.jsp" :go;
 		response.sendRedirect(red);
 		break;
 	case "실패" : %>

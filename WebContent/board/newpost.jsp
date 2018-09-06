@@ -16,7 +16,7 @@
 		첨부파일 : <input type="file" name = "attach"/><br>
 
 		<button type="submit" >작성</button>
-		<a href="<%=application.getContextPath()%>/board/boardhome.jsp"><button type="submit">취소</button></a>
+		<a href="<%=application.getContextPath()%>/board/postlist.jsp"><button type="submit">취소</button></a>
 
 	</form>
 	</div>

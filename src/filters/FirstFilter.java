@@ -15,6 +15,7 @@ public class FirstFilter extends HttpFilter{
 	protected void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		String uri = request.getRequestURI();	
+		String query = request.getQueryString();
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("uri",uri);

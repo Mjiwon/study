@@ -29,7 +29,10 @@
 		<url-pattern>/log/logoutaction.jsp</url-pattern>
 		<url-pattern>/log/logout.jsp</url-pattern>
 		<url-pattern>/join/joinaction.jsp</url-pattern>
-		
+		<url-pattern>/board/detailpost.jsp</url-pattern>
+		<url-pattern>/board/goodaction.jsp</url-pattern>
+		<url-pattern>/board/newpost.jsp</url-pattern>
+		<url-pattern>/board/newpostaction.jsp</url-pattern>
 	</filter-mapping>
 	
 </web-app>

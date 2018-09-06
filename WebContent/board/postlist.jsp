@@ -32,7 +32,7 @@
 			String attach = (String)map.get("ATTACH");	
 			%>
 			<td><%=no %></td>
-			<td><%=title %></td>
+			<td><a href="<%=application.getContextPath()%>/board/detailpost.jsp?no=<%=no %>" ><%=title %></a></td>
 			<td><%=writer %></td>
 			<td><%=leftdate %></td>
 			<td><%=good %></td>
