@@ -28,9 +28,10 @@
 				String name = file.getFileName();
 				long time = System.currentTimeMillis();
 				File saveDir = new File(application.getRealPath("/storage"),String.valueOf(time));
+				System.out.println(saveDir);
 				saveDir.mkdirs();
 				file.writeTo(saveDir);
-				String uri = application.getContextPath() + "/storage/"+time+"/"+name;
+				String uri = "/storage/"+time+"/"+name;
 				System.out.println(uri);
 				data.put("attach", uri);
 			}else{

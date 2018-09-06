@@ -19,6 +19,7 @@ public class FirstFilter extends HttpFilter{
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("uri",uri);
+		session.setAttribute("query", query);
 		//		boolean check = (Boolean)session.getAttribute("auth");
 
 		if(session.getAttribute("auth")!=null) {
