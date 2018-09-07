@@ -16,7 +16,10 @@
 	<listener>
 		<listener-class>handler.SessionHandler</listener-class>
 	</listener>
-	
+	<listener>
+		<listener-class>handler.FreePassHandler</listener-class>
+	</listener>
+
 	<filter>
 		<filter-name>a</filter-name>
 		<filter-class>filters.FirstFilter</filter-class>

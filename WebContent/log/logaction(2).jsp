@@ -1,4 +1,3 @@
-<%@page import="java.net.URLEncoder"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList"%>
@@ -13,7 +12,6 @@
 <%
 	String id = (String)request.getParameter("id");
 	String pass = (String)request.getParameter("pass");
-	String freepass = (String)request.getParameter("freepass");
 	
 	AccountDAO dao = new AccountDAO();
 	
@@ -25,10 +23,11 @@
 		check = -1;
 		str = "실패";
 	}else{
-		
-		
 		Set set = (Set)application.getAttribute("users");
-
+		if(set.contains(id)){
+			check = 0;
+			str ="중복로그인";
+		}else{
 			check=1;
 			str="성공";
 			set.add(id);
@@ -38,13 +37,6 @@
 			session.setAttribute("auth", true);
 			session.setAttribute("id", id);
 			
-		if(freepass!=null){
-			System.out.println("들어올까?");
-			Cookie c = new Cookie("freepass",id);
-			c.setPath(application.getContextPath());
-			c.setMaxAge(60*60*7);
-			response.addCookie(c);
-		}
 			LoginLogDAO ldao = new LoginLogDAO();
 			Map log = ldao.pastlog(id);
 			
@@ -55,13 +47,15 @@
 			}
 			
 			ldao.loglist(id);
+		}
 	}
 	
 	String wuri = (String)session.getAttribute("uri");
 	String query = (String)session.getAttribute("query");
 	
 	String go = wuri+(query!=null ? "?"+query:"");
-
+	
+	System.out.println(go);
 %>
 <p>
 <%
