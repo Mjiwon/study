@@ -20,6 +20,7 @@ public class SessionHandler implements HttpSessionListener {
 		Set<String> set =(Set)application.getAttribute("users");
 		String id = (String)session.getAttribute("id");
 		set.remove(id);
+		session.removeAttribute("auth");		
 		application.setAttribute("users", set);	// ¾È½ÃÄÑµµ µÊ?
 	}
 	

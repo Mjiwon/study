@@ -13,7 +13,6 @@
 	MultipartParser parser = new MultipartParser(request, 1024*1024*100, true, true, "UTF-8");
 	Map data = new HashMap();
 	
-	String id = (String)session.getAttribute("id");
 	
 	
 	while(true){

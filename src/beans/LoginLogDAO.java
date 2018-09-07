@@ -44,6 +44,7 @@ public class LoginLogDAO {
 				ret.put("time", rs.getDate("time"));
 				return ret;
 			}else {
+				
 				return null;
 			}
 		}catch(Exception e) {

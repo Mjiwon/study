@@ -33,7 +33,7 @@ public class ApplicationHandler implements ServletContextListener{
 		ctx.setAttribute("r", r);
 		ctx.setRequestCharacterEncoding("UTF-8");
 		ctx.setAttribute("users", new LinkedHashSet<>());
-
+		
 	}
 	
 	@Override
